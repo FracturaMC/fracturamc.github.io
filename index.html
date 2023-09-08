@@ -21,9 +21,9 @@
 <body>
     <div class="stars"></div>
     <div class="twinkling"></div>
-    <div class="clouds"></div>
+    <!-- <div class="clouds"></div> -->
     <div class="flexbox">
-        <div class="fade-in">
+        <div class="fade-in" style="margin: 0 20px;">
             <h3 style="color: #666;">
                 <a class="link" href="https://www.youtube.com/@rickysplashhd">RickySHD</a> e 
                 <a class="link" href="https://www.youtube.com/@pingodaz">Pingoda</a> presentano
@@ -40,28 +40,36 @@
                         <input type="email" name="entry.1541645260" placeholder="La tua email" required>
                         <input type="text" name="entry.2104314557" placeholder="Il tuo username su Minecraft" required>
                         <input type="text" name="entry.1456682242" placeholder="Il tuo username su Discord" required>
+                        <p style="margin: 10px 0; width: 100%; letter-spacing: .5px; color: #666;">
+                            <i>Non condivideremo la tua email con nessuno. Se vuoi richiedere l'eliminazione dei dati 
+                                inviaci una mail <a href="https://dsc.gg/fracturamc"><i class="bi bi-envelope-fill" style="color: #bbb;"></i></a>
+                                o contatta un membro dello staff nel server Discord 
+                                <a href="https://dsc.gg/fracturamc"><i class="bi bi-discord" style="color: #bbb;"></i></a>
+                            </i>
+                        </p>
                     </div>
                     <input class="input-submit" type="submit" value="Pre-registrati">
                 </form>
+                <a onclick="hidePopup()" style="cursor: pointer; padding: 10px;">Annulla</a>
         </div>
 
-        <img class="big-logo fade-in" style="opacity: 0; opacity: 0; animation-delay: 1s; animation-delay: 1s;" src="assets/logo.webp"/>
+        <img class="big-logo fade-in delay-1s" src="assets/logo.webp"/>
         
         <br>
         
-        <div class="fade-in" style="opacity: 0; opacity: 0; animation-delay: 1.5s; animation-delay: 1.5s;">
+        <div class="fade-in delay-1dot5s" style="margin: 0 20px;">
             <h1 class="shimmer">PROSSIMAMENTE</h1>
         </div>
 
         <br>
 
-        <div class="fade-in" style="opacity: 0; opacity: 0; animation-delay: 2s; animation-delay: 2s;">       
+        <div class="fade-in delay-2s button-bar">       
             <button class="glass-button" onclick="showPopup()">
                 <i class="bi bi-stars"></i>
                 <b>Pre-registrati</b>
             </button>
         
-            <a href="https://discord.gg/8uQ3T3yktz">
+            <a href="https://dsc.gg/fracturamc">
                 <button class="glass-button">
                     <b>Scopri di più</b>
                     <i class="bi bi-arrow-right"></i>
@@ -69,8 +77,8 @@
             </a>
         </div>
 
-        <div class="footer fade-in" style="opacity: 0; opacity: 0; animation-delay: 2s; animation-delay: 3s;">
-            <a href="https://discord.gg/8uQ3T3yktz"><i class="bi bi-discord"></i></a>
+        <div class="footer fade-in delay-3s">
+            <a href="https://dsc.gg/fracturamc"><i class="bi bi-discord"></i></a>
             <a href="https://www.youtube.com/@FracturaMC"><i class="bi bi-youtube"></i></a>
             <a href="https://www.tiktok.com/@fracturamc"><i class="bi bi-tiktok"></i></a>
             <a href="https://twitter.com/FracturaServer"><i class="bi bi-twitter"></i></a>
