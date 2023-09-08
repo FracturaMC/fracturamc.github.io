@@ -30,15 +30,23 @@
             </h3>
         </div>
 
+        <div id="popup-bg" class="popup-blur-bg" onclick="hidePopup()"></div>
+        <div id="popup" class="glass-popup">
+            <h2 style="margin-top: 0px;">Pre-registrazione</h2>
+            <p style="margin: 0; width: 100%;">Pre-registrati per ottenere accesso ad eventuali <b>closed beta</b> e 
+                <b>ricompense cosmetiche esclusive</b> prima del lancio ufficiale!</p>
+                <form id="pre-register-form" style="text-align: center;" method="post" action="https://docs.google.com/forms/d/e/1FAIpQLSc9iEgseNWS_kLYWi0xr98MBKQp0R9oOqW7IZH8cRAsmFko4A/formResponse">
+                    <div class="form" style="padding: 20px;">
+                        <input type="email" name="entry.1541645260" placeholder="La tua email" required>
+                        <input type="text" name="entry.2104314557" placeholder="Il tuo username su Minecraft" required>
+                        <input type="text" name="entry.1456682242" placeholder="Il tuo username su Discord" required>
+                    </div>
+                    <input class="input-submit" type="submit" value="Pre-registrati">
+                </form>
+        </div>
+
         <img class="big-logo fade-in" style="opacity: 0; opacity: 0; animation-delay: 1s; animation-delay: 1s;" src="assets/logo.webp"/>
         
-        <!-- <div class="fade-in" style="opacity: 0; animation-delay: 1s;">
-            <p>
-                FracturaMC è un server Minecraft con meccaniche simili a quelle di un towny/faction, 
-                ma con una interconnessione molto profonda ed intrecciata tale da rendere unica l'esperienza 
-                per ogni giocatore, che potrà raccontare la propria storia ed influenzare l'andamento del mondo con le proprie mani...
-            </p>
-        </div> -->
         <br>
         
         <div class="fade-in" style="opacity: 0; opacity: 0; animation-delay: 1.5s; animation-delay: 1.5s;">
@@ -48,12 +56,17 @@
         <br>
 
         <div class="fade-in" style="opacity: 0; opacity: 0; animation-delay: 2s; animation-delay: 2s;">       
+            <button class="glass-button" onclick="showPopup()">
+                <i class="bi bi-stars"></i>
+                <b>Pre-registrati</b>
+            </button>
+        
             <a href="https://discord.gg/8uQ3T3yktz">
                 <button class="glass-button">
                     <b>Scopri di più</b>
                     <i class="bi bi-arrow-right"></i>
                 </button>
-            </a>         
+            </a>
         </div>
 
         <div class="footer fade-in" style="opacity: 0; opacity: 0; animation-delay: 2s; animation-delay: 3s;">
