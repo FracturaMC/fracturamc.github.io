@@ -39,6 +39,7 @@ body {
 
 .shimmer {
     display:inline-block;
+    mask: linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
     -webkit-mask: linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
     background-repeat: no-repeat;
     animation: shimmer 2.5s infinite;
@@ -125,6 +126,7 @@ p {
     background-color: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     color: rgba(255,255,255,0.8);
     font-size: 14px;
     letter-spacing: 2px;
@@ -151,14 +153,21 @@ p {
     height: 100%;
     opacity: 0;
     backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
     transition: .5s;
-    cursor: pointer;
 }
 
 .popup-blur-bg-visible {
     backdrop-filter: brightness(0.5) blur(2px);
+    -webkit-backdrop-filter: brightness(0.5) blur(2px);
     opacity: 100%;
     visibility: visible;
+}
+
+@supports not (backdrop-filter: none) {
+    .popup-blur-bg {
+        background-color: #000;
+    }
 }
 
 .glass-popup {
@@ -174,6 +183,7 @@ p {
     background-color: rgba(56, 56, 56, 0.1);
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     color: rgba(255,255,255,0.8);
     font-size: 14px;
     letter-spacing: 2px;
@@ -286,22 +296,30 @@ p {
     justify-content: center;
 }
 
-.delay-1s {
-    opacity: 0;
-    animation-delay: 1s;
+@supports not (-webkit-touch-callout: none) {
+    .delay-1s {
+        opacity: 0;
+        animation-delay: 1s;
+    }
+
+    .delay-1dot5s {
+        opacity: 0;
+        animation-delay: 1.5s;
+    }
+
+    .delay-2s {
+        opacity: 0;
+        animation-delay: 2s;
+    }
+
+    .delay-3s {
+        opacity: 0;
+        animation-delay: 3s;
+    }
 }
 
-.delay-1dot5s {
-    opacity: 0;
-    animation-delay: 1.5s;
-}
-
-.delay-2s {
-    opacity: 0;
-    animation-delay: 2s;
-}
-
-.delay-3s {
-    opacity: 0;
-    animation-delay: 3s;
+@supports (-webkit-touch-callout: none) {
+    .fade-in {
+        animation: none;
+    }
 }
