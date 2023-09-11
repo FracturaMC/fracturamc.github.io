@@ -18,7 +18,9 @@ function hidePopup() {
   document.getElementById("popup-bg").classList.remove("popup-blur-bg-visible");
 }
 
-function preRegister() {
+function preRegister(event) {
+  event.preventDefault();
+
   var email = document.getElementById("pre-register-email").value;
   var username = document.getElementById("pre-register-namemc").value;
   var discord = document.getElementById("pre-register-nameds").value;
@@ -36,4 +38,5 @@ function preRegister() {
   });
   
   hidePopup();
+  return false;
 }
