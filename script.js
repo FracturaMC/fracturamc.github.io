@@ -18,17 +18,22 @@ function hidePopup() {
   document.getElementById("popup-bg").classList.remove("popup-blur-bg-visible");
 }
 
-function formSubmit(e) {
-  var url = "https://docs.google.com/forms/d/e/1FAIpQLSc9iEgseNWS_kLYWi0xr98MBKQp0R9oOqW7IZH8cRAsmFko4A/formResponse";
-  var request = new XMLHttpRequest();
-  request.open('POST', url, true);
-  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+function preRegister() {
+  var email = document.getElementById("pre-register-email").value;
+  var username = document.getElementById("pre-register-namemc").value;
+  var discord = document.getElementById("pre-register-nameds").value;
 
-  request.send(new FormData(document.getElementById("pre-register-form")));
-  return false;
-}
-
-// and you can attach form submit event like this for example
-function attachFormSubmitEvent(formId){
-  document.getElementById(formId).addEventListener("submit", formSubmit);
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSc9iEgseNWS_kLYWi0xr98MBKQp0R9oOqW7IZH8cRAsmFko4A/formResponse', {
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },    
+    body: new URLSearchParams({
+      'entry.1541645260': email,
+      'entry.2104314557': username,
+      'entry.1456682242': discord
+    }).toString()
+  });
+  
+  hidePopup();
 }
