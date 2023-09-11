@@ -24,6 +24,7 @@ function preRegister(event) {
   var email = document.getElementById("pre-register-email").value;
   var username = document.getElementById("pre-register-namemc").value;
   var discord = document.getElementById("pre-register-nameds").value;
+  var submitBtn = document.getElementById("pre-register-submit");
 
   fetch('https://docs.google.com/forms/d/e/1FAIpQLSc9iEgseNWS_kLYWi0xr98MBKQp0R9oOqW7IZH8cRAsmFko4A/formResponse', {
     method: 'POST',
@@ -35,8 +36,25 @@ function preRegister(event) {
       'entry.2104314557': username,
       'entry.1456682242': discord
     }).toString()
+  }).then((success) => {
+    submitBtn.value = "Registrato!";
+    submitBtn.classList.add("success");
+
+    setTimeout(function() {
+      hidePopup();
+      submitBtn.value = "Pre-registrati";
+      submitBtn.classList.remove("success");
+    }, 1500);
+
+  }, (fail) => {
+    submitBtn.value = "Riprova";
+    submitBtn.classList.add("error");
+
+    setTimeout(function() {
+      submitBtn.value = "Pre-registrati";
+      submitBtn.classList.remove("error");
+    }, 1500);
   });
   
-  hidePopup();
   return false;
 }

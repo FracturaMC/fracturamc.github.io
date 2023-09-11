@@ -213,6 +213,18 @@ p {
     transition: 0.2s;
 }
 
+input.error {
+    background: rgba(255,0,0,.1);
+    border: 1px solid rgba(255,0,0,.4);
+    color: orangered;
+}
+
+input.success {
+    background: rgba(0,255,0,.1);
+    border: 1px solid rgba(0,255,0,.4);
+    color: limegreen;
+}
+
 .input-submit {
     margin: 10px 0;
     padding: 15px;
@@ -322,4 +334,8 @@ p {
     .fade-in {
         animation: none;
     }
+}
+
+.scale-0 {
+    scale: 0;
 }
