@@ -36,25 +36,36 @@ function preRegister(event) {
       'entry.2104314557': username,
       'entry.1456682242': discord
     }).toString()
-  }).then((success) => {
-    submitBtn.value = "Registrato!";
-    submitBtn.classList.add("success");
+  }).finally((res) => {
+    submitBtn.value = "Fatto!";
+    submitBtn.classList.add("done");
 
     setTimeout(function() {
-      hidePopup();
-      submitBtn.value = "Pre-registrati";
-      submitBtn.classList.remove("success");
-    }, 1500);
-
-  }, (fail) => {
-    submitBtn.value = "Riprova";
-    submitBtn.classList.add("error");
-
-    setTimeout(function() {
-      submitBtn.value = "Pre-registrati";
-      submitBtn.classList.remove("error");
-    }, 1500);
+          hidePopup();
+          submitBtn.value = "Pre-registrati";
+          submitBtn.classList.remove("done");
+        }, 1500);
   });
+
+  // .then((success) => {
+  //   submitBtn.value = "Registrato!";
+  //   submitBtn.classList.add("success");
+
+  //   setTimeout(function() {
+  //     hidePopup();
+  //     submitBtn.value = "Pre-registrati";
+  //     submitBtn.classList.remove("success");
+  //   }, 1500);
+
+  // }, (fail) => {
+  //   submitBtn.value = "Riprova";
+  //   submitBtn.classList.add("error");
+
+  //   setTimeout(function() {
+  //     submitBtn.value = "Pre-registrati";
+  //     submitBtn.classList.remove("error");
+  //   }, 1500);
+  // });
   
   return false;
 }
