@@ -19,15 +19,21 @@ function hidePopup() {
 }
 
 function preRegister() {
+  var email = document.getElementById("pre-register-email").value;
+  var username = document.getElementById("pre-register-namemc").value;
+  var discord = document.getElementById("pre-register-nameds").value;
+
   fetch('https://docs.google.com/forms/d/e/1FAIpQLSc9iEgseNWS_kLYWi0xr98MBKQp0R9oOqW7IZH8cRAsmFko4A/formResponse', {
     method: 'POST',
     headers:{
       'Content-Type': 'application/x-www-form-urlencoded'
     },    
     body: new URLSearchParams({
-        'entry.1541645260': 'test@gmail.com',
-        'entry.2104314557': 'namemc',
-        'entry.1456682242': 'discord'
+      'entry.1541645260': email,
+      'entry.2104314557': username,
+      'entry.1456682242': discord
     }).toString()
   });
+  
+  hidePopup();
 }
