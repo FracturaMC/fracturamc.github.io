@@ -1,0 +1,94 @@
+.post, .post > *, .post > #content > * {
+    text-transform: none;
+    margin: revert;
+    text-align: justify;
+    width: 100%;
+}
+
+.post > #content {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.post-details {
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    margin: 0 0 2em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-details > #whenwho {
+    margin: 0;
+    width: auto;
+}
+
+.post-details > div > i {
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.post > #content > h1, 
+.post > #content > h2, 
+.post > #content > h3, 
+.post > #content > h4, 
+.post > #content > h5,
+.post > #content > h6 {
+    margin-bottom: 0;
+} 
+
+.post > #content > pre {
+    color: rgba(255, 255, 255, .8);
+    background-color: #2222226d;
+    margin: auto;
+    width: -webkit-fill-available;
+    padding: 1em;
+    border: 1px solid #33333399;
+    border-radius: 1em;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 0 auto;
+    top: 0;
+}
+
+.post-title {
+    text-align: start;
+    margin-top: 1.5em;
+    margin-bottom: .2em;
+    font-size: 3em;
+}
+
+.post-footer {
+    position: unset;
+    margin: 0 auto;
+}
+
+.post > hr {
+    border-color: #ffffff1f;
+    border-width: 1px;
+    border-style: solid;
+}
+
+@media (min-width: 1001px) {
+    .post {
+        width: 40vw;
+        padding: 0 5vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .post {
+        width: 80vw;
+        padding: 0 5vw;
+    }
+}
