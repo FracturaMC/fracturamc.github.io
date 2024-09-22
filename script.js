@@ -52,11 +52,15 @@ function preRegister(event) {
 
 //////////////////////////////////
 
+const navlogo = document.getElementById('navlogo');
+const nav = document.getElementsByTagName('nav')[0];
+
 window.onscroll = function() {
-  var nav = document.getElementById('navlogo');
   if ( window.scrollY > 10) {
-      nav.classList.remove("navlogo-big");
+      navlogo.classList.remove("navlogo-big");
+      nav.classList.add("nav-scrolled");
   } else {
-      nav.classList.add("navlogo-big");
+    navlogo.classList.add("navlogo-big");
+    nav.classList.remove("nav-scrolled");
   }
 }

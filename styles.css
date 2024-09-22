@@ -1,3 +1,6 @@
+:root {
+    color-scheme: dark;
+}
 
 body {
     font-family: "Inter Tight", sans-serif;
@@ -358,6 +361,11 @@ nav {
     background-color: #2222223d;
     border-bottom: 1px solid #33333399;
     backdrop-filter: blur(5px);
+    transition: background-color 0.5s ease;
+}
+
+.nav-scrolled {
+    background-color: #111111bd;
 }
 
 .navlogo {
