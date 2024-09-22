@@ -1,9 +1,15 @@
+:root {
+    color-scheme: dark;
+}
 
 body {
-    font-family: Arial;
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 14px;
     background-color: #000;
     margin: 0;
+    overflow-x: hidden;
 }
 
 @media (min-width: 641px) {
@@ -96,24 +102,16 @@ body {
 a, h1, h2, h3, h4 {
     text-decoration: none;
     color: rgba(255,255,255,0.8);
-    letter-spacing: 2px;
     text-transform: uppercase;
     text-align: center;
 }
 
-.link {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 2px;
-}
-
 p {
     text-decoration: none;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.7);
     text-align: center;
-    width: 50%;
-    margin: auto;
-    letter-spacing: 1px;
+    width: 60%;
+    margin: 0 auto;
 }
 
 .glass-button {
@@ -129,7 +127,6 @@ p {
     -webkit-backdrop-filter: blur(30px);
     color: rgba(255,255,255,0.8);
     font-size: 14px;
-    letter-spacing: 2px;
     cursor: pointer;
     text-transform: uppercase;
     transition: 0.2s;
@@ -186,7 +183,6 @@ p {
     -webkit-backdrop-filter: blur(30px);
     color: rgba(255,255,255,0.8);
     font-size: 14px;
-    letter-spacing: 2px;
     transition: 0.2s;
     opacity: 0;
 }
@@ -260,7 +256,6 @@ input.success {
 }
 
 .form > label {
-    letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -281,10 +276,19 @@ input.success {
     }
 }
 
-.flexbox {
+.body-flex {
     display: flex;
     flex-direction: column;
-    margin: 0;
+    position: absolute;
+    width: 100vw;
+    min-height: 100%;
+    top: 0;
+    background-image: 
+        radial-gradient(ellipse at top right, rgba(226, 99, 247, 0.1), transparent 20vw),
+        radial-gradient(ellipse at bottom left, rgba(59, 29, 170, 0.3), transparent 40vw);
+}
+
+.body-flex-center {
     height: 100vh;
     justify-content: center;
     align-content: center;
@@ -292,7 +296,7 @@ input.success {
 }
 
 .footer {
-    height: 64px;
+    height: 3em;
     position: absolute;
     bottom: 0;
 }
@@ -343,4 +347,84 @@ input.success {
 
 .scale-0 {
     scale: 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    width: auto;
+    padding: .5em;
+    display: flex;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    background-color: #2222223d;
+    border-bottom: 1px solid #33333399;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.5s ease;
+}
+
+.nav-scrolled {
+    background-color: #111111bd;
+}
+
+.navlogo {
+    filter: drop-shadow(0px 2px 7px rgb(111, 65, 208));
+    transition: filter 0.15s ease, scale 0.15s ease, max-height 0.30s ease;
+}
+
+.navlogo:hover {
+    scale: 1.1;
+    filter: drop-shadow(0px 2px 10px rgb(111, 65, 208));
+}
+
+.navlogo-big {
+    filter: drop-shadow(0px 2px 21px rgb(111, 65, 208));
+    max-height: 9em;
+}
+
+.navlogo-big:hover {
+    filter: drop-shadow(0px 2px 30px rgb(111, 65, 208));
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    width: 40vw;
+    margin: auto 1em;
+}
+
+.nav-left {
+    justify-content: end;
+}
+ 
+nav > div > a {
+    margin: 0 .5em 0 .5em;
+}
+
+nav > div > a, .link {
+    letter-spacing: normal;
+    font-weight: 600;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+nav > div > a:hover, .link:hover {
+    text-shadow: 0px 0px 10px white;
+    transition: all 0.15s ease;
+}
+
+nav > *, nav > a > *, nav > div > * {
+    max-height: 4em;
+}
+
+.hidden {
+    display: none;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-100 {
+    opacity: 1;
 }

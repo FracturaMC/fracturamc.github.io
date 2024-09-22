@@ -46,26 +46,21 @@ function preRegister(event) {
           submitBtn.classList.remove("done");
         }, 1500);
   });
-
-  // .then((success) => {
-  //   submitBtn.value = "Registrato!";
-  //   submitBtn.classList.add("success");
-
-  //   setTimeout(function() {
-  //     hidePopup();
-  //     submitBtn.value = "Pre-registrati";
-  //     submitBtn.classList.remove("success");
-  //   }, 1500);
-
-  // }, (fail) => {
-  //   submitBtn.value = "Riprova";
-  //   submitBtn.classList.add("error");
-
-  //   setTimeout(function() {
-  //     submitBtn.value = "Pre-registrati";
-  //     submitBtn.classList.remove("error");
-  //   }, 1500);
-  // });
   
   return false;
+}
+
+//////////////////////////////////
+
+const navlogo = document.getElementById('navlogo');
+const nav = document.getElementsByTagName('nav')[0];
+
+window.onscroll = function() {
+  if ( window.scrollY > 10) {
+      navlogo.classList.remove("navlogo-big");
+      nav.classList.add("nav-scrolled");
+  } else {
+    navlogo.classList.add("navlogo-big");
+    nav.classList.remove("nav-scrolled");
+  }
 }
