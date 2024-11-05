@@ -5,7 +5,7 @@ const postTitle = document.getElementById("posttitle");
 const postDetails = document.getElementById("whenwho");
 
 const postProperties = ['title', 'date', 'author'];
-const latest = 0;
+const latest = 1;
 
 const classMap = {
     a: "link"
@@ -54,17 +54,17 @@ function generatePostHtml(id, t) {
     for (const line of t.split('\n')) {
         if (postProperties.includes(line.split(':')[0])) {
             var prop = line.split(':')[0];
-            var value = line.split(':')[1].trim();
+            var value = line.split(":").toSpliced().splice(1).join(":").trim();
 
             if (prop == 'title')
                 postTitle.innerText = value;
             else if (prop == 'date')
-                postDetails.innerText = value;
+                postDetails.innerText = "pubblicato il " + value;
             else if (prop == 'author') {
                 if (postDetails.innerText.length == 0)
-                    postDetails.innerText = value;
+                    postDetails.innerText = "da " + value;
                 else
-                    postDetails.innerText += " · " + value;
+                    postDetails.innerText += " · da " + value;
             }
 
         } else {

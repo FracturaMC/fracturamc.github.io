@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    font-size: 1.12em;
 }
 
 .post-details {
@@ -67,12 +68,25 @@
     border-radius: 1em;
 }
 
+.post > #content p {
+    margin-bottom: 0;
+}
+
 .post > #content img, .post > #content iframe {
     max-width: -webkit-fill-available;
     width: revert-layer;
     border-radius: 1em;
     display: block;
     margin: 1em auto;
+}
+
+.post > #content hr {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    width: 10%;
+    opacity: .4;
+    color: white;
+    border-radius: 10px;
 }
 
 .post {
