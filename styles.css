@@ -366,6 +366,7 @@ nav {
 
 .nav-scrolled {
     background-color: #111111bd;
+    backdrop-filter: blur(20px);
 }
 
 .navlogo {
