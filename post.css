@@ -78,6 +78,11 @@
     border-radius: 1em;
     display: block;
     margin: 1em auto;
+    transition: all .2s ease;
+}
+
+.post > #content img:hover {
+    scale: 1.05
 }
 
 .post > #content hr {

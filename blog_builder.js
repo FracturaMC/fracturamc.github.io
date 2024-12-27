@@ -5,7 +5,7 @@ const postTitle = document.getElementById("posttitle");
 const postDetails = document.getElementById("whenwho");
 
 const postProperties = ['title', 'date', 'author'];
-const latest = 1;
+const latest = 2;
 
 const classMap = {
     a: "link"
@@ -64,7 +64,7 @@ function generatePostHtml(id, t) {
                 if (postDetails.innerText.length == 0)
                     postDetails.innerText = "da " + value;
                 else
-                    postDetails.innerText += " · da " + value;
+                    postDetails.innerText += " · " + value;
             }
 
         } else {
