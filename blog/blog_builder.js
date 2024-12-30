@@ -7,6 +7,14 @@ const postDetails = document.getElementById("whenwho");
 const postProperties = ['title', 'date', 'author'];
 const latest = 2;
 
+const slugIdMap = {
+    "introduzione-blog": 0,
+    "annuncio-closed-beta": 1,
+    "aggiornamento-inverno-2024" : 2
+};
+
+const idSlugMap = Object.fromEntries(Object.entries(slugIdMap).map(a => a.reverse()));
+
 const classMap = {
     a: "link"
 }
@@ -78,11 +86,26 @@ function generatePostHtml(id, t) {
 }
 
 postPrev.onclick = (e) => {
-    buildPost(--current);
+    window.location.hash = "#/" + idSlugMap[--current];
 };
 
 postNext.onclick = (e) => {
-    buildPost(++current);
+    window.location.hash = "#/" + idSlugMap[++current];
 };
 
-buildPost(latest);
+document.addEventListener("DOMContentLoaded", handleRouting);
+window.addEventListener("hashchange", handleRouting);
+
+function handleRouting() {
+    var slug = window.location.hash.replace("#/","");
+    if (slug !== "") {
+        if (slug in slugIdMap) {
+            buildPost(current = slugIdMap[slug]);
+        } else {
+            window.location.href = "/404";
+        }
+    } else {
+        buildPost(latest);
+        window.location.hash = "#/" + idSlugMap[latest];
+    }
+}
