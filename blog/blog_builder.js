@@ -5,12 +5,13 @@ const postTitle = document.getElementById("posttitle");
 const postDetails = document.getElementById("whenwho");
 
 const postProperties = ['title', 'date', 'author'];
-const latest = 2;
+const latest = 3;
 
 const slugIdMap = {
     "introduzione-blog": 0,
     "annuncio-closed-beta": 1,
-    "aggiornamento-inverno-2024" : 2
+    "aggiornamento-inverno-2024" : 2,
+    "aggiornamento-inverno-2025" : 3
 };
 
 const idSlugMap = Object.fromEntries(Object.entries(slugIdMap).map(a => a.reverse()));
